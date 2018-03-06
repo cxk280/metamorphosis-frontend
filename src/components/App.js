@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Switch, NavLink, Route } from 'react-router-dom';
+import HomePage from './HomePage';
 import Login from './Login';
 import Signup from './Signup';
 import ChatMain from './ChatMain';
@@ -17,14 +18,15 @@ class App extends React.Component {
     return (
       <div>
         <div>
-          <NavLink exact to="/" activeStyle={activeStyle}>Login</NavLink>
+          <NavLink exact to="/login" activeStyle={activeStyle}>Login</NavLink>
           {' | '}
           <NavLink to="/signup" activeStyle={activeStyle}>Sign Up</NavLink>
           {' | '}
           <NavLink to="/chat" activeStyle={activeStyle}>Chat</NavLink>
         </div>
         <Switch>
-          <Route exact path="/" component={Login} />
+          <Route exact path="/" component={HomePage} />
+          <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
           <Route path="/chat" component={ChatMain} />
           <Route component={NotFoundPage} />
