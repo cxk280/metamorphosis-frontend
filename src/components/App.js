@@ -2,9 +2,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Switch, NavLink, Route } from 'react-router-dom';
-import HomePage from './HomePage';
-import FuelSavingsPage from './containers/FuelSavingsPage';
-import AboutPage from './AboutPage';
+import Login from './Login';
+import Signup from './Signup';
+import ChatMain from './ChatMain';
 import NotFoundPage from './NotFoundPage';
 
 // This is a class-based component because the current
@@ -17,16 +17,16 @@ class App extends React.Component {
     return (
       <div>
         <div>
-          <NavLink exact to="/" activeStyle={activeStyle}>Home</NavLink>
+          <NavLink exact to="/" activeStyle={activeStyle}>Login</NavLink>
           {' | '}
-          <NavLink to="/fuel-savings" activeStyle={activeStyle}>Demo App</NavLink>
+          <NavLink to="/signup" activeStyle={activeStyle}>Sign Up</NavLink>
           {' | '}
-          <NavLink to="/about" activeStyle={activeStyle}>About</NavLink>
+          <NavLink to="/chat" activeStyle={activeStyle}>Chat</NavLink>
         </div>
         <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/fuel-savings" component={FuelSavingsPage} />
-          <Route path="/about" component={AboutPage} />
+          <Route exact path="/" component={Login} />
+          <Route path="/signup" component={Signup} />
+          <Route path="/chat" component={ChatMain} />
           <Route component={NotFoundPage} />
         </Switch>
       </div>
