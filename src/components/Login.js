@@ -6,7 +6,7 @@ const Login = () => {
     <div>
       <center>
       <h1>Login Page</h1>
-        <div className="loginSection">
+        <div className="credentialSection">
           <img src="http://via.placeholder.com/350x150"/>
           <br />
           <h2>METAMORPHOSIS</h2>
@@ -27,6 +27,8 @@ const Login = () => {
             <input type="submit"/>
             <br /><br />
           </form>
+          <br />
+          <p>Don't have an account? Sign up <a href="/signup">here</a>!</p>
         </div>
       </center>
     </div>
