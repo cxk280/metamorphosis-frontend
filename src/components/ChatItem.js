@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class ChatMain extends React.Component {
+class ChatItem extends React.Component {
   render() {
     return (
       <div>
-        <h1>Chat Main Page</h1>
+        <p>Chat Item</p>
       </div>
     );
   };
 };
 
-export default ChatMain;
+export default ChatItem;

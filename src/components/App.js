@@ -5,7 +5,7 @@ import { Switch, NavLink, Route } from 'react-router-dom';
 import HomePage from './HomePage';
 import Login from './Login';
 import Signup from './Signup';
-import ChatMain from './ChatMain';
+import ChatPage from './ChatPage';
 import NotFoundPage from './NotFoundPage';
 
 // This is a class-based component because the current
@@ -28,7 +28,7 @@ class App extends React.Component {
           <Route exact path="/" component={HomePage} />
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
-          <Route path="/chat" component={ChatMain} />
+          <Route path="/chat" component={ChatPage} />
           <Route component={NotFoundPage} />
         </Switch>
       </div>
