@@ -17,13 +17,6 @@ class App extends React.Component {
     const activeStyle = { color: 'blue' };
     return (
       <div>
-        <div>
-          <NavLink exact to="/login" activeStyle={activeStyle}>Login</NavLink>
-          {' | '}
-          <NavLink to="/signup" activeStyle={activeStyle}>Sign Up</NavLink>
-          {' | '}
-          <NavLink to="/chat" activeStyle={activeStyle}>Chat</NavLink>
-        </div>
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/login" component={Login} />

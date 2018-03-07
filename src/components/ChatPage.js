@@ -1,11 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ChatMain from './ChatMain';
+import ChatTop from './ChatTop';
+import ChatBottom from './ChatBottom';
 
 class ChatPage extends React.Component {
   render() {
     return (
-      <div>
-        <h1>Chat Page</h1>
+      <div className="chatPage">
+          <ChatTop />
+          <ChatMain />
+          <ChatBottom />
       </div>
     );
   };
