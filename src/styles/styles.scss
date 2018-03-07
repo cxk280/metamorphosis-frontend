@@ -183,6 +183,10 @@ input.small { width: 46px; }
   margin-bottom: 4vh;
 }
 
+.imageParentMain {
+ width: 67.6vw;
+}
+
 .chatLeftLogout {
   background: #FFFFFF;
   border: 1px solid #0071BC;
@@ -234,6 +238,10 @@ input.small { width: 46px; }
   border-radius: 50%;
 }
 
+.mainPersonImage {
+
+}
+
 .topPersonImage {
   position: absolute;
   // left: calc(calc(calc(100vw - 881px)/2) + 440.5px - 73px - 15px);
@@ -275,4 +283,8 @@ input.small { width: 46px; }
 
 .chatTextareaForm {
   height: 100%;
+}
+
+.chatMessage {
+
 }
