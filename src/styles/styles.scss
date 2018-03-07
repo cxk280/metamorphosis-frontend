@@ -127,12 +127,32 @@ input.small { width: 46px; }
 }
 
 .chatLeft {
-  // background: #FFFFFF;
-  background: pink;
-  // width: 50px;
+  background: #FFFFFF;
   width: calc(calc(100vw - 881px)/2);
   margin-right: calc(100vw - calc(calc(100vw - 881px)/2));
   height: 100vh;
   box-shadow: 4px 4px 4px rgba(0,0,0,0.35);
   filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=4, OffY=4, Color="#000000");
+}
+
+.imageParentChatLeft {
+  width: calc(calc(100vw - 881px)/2);
+}
+
+.chatLeftLogout {
+  background: #FFFFFF;
+  border: 1px solid #0071BC;
+  width: calc(calc(calc(100vw - 881px)/2)/2);
+  height: 30px;
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  box-shadow: 2.23px 2.23px 2.23px rgba(0,0,0,0.35);
+  filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2.23, OffY=2.23, Color="#000000");
+  font-family: "Source Sans Pro";
+  font-weight: bold;
+  font-size: 15px;
+  letter-spacing: 0.6px;
+  color: #0071BC;
+  margin-top: 5vh;
 }
