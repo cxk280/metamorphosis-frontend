@@ -6,7 +6,24 @@ class ChatRight extends React.Component {
     return (
       <center>
         <div className="chatRight">
-          <h3>ChatRight</h3>
+          <p id="friendsRight">Friends</p>
+          <br />
+          <div className="imageAndNameParentRight">
+              <img className="personImage rightPersonImage" src="http://via.placeholder.com/73x73"/>
+              <p className="name rightName">Vickie Reed</p>
+          </div>
+          <div className="imageAndNameParentRight">
+              <img className="personImage rightPersonImage" src="http://via.placeholder.com/73x73"/>
+              <p className="name rightName">Vickie Reed</p>
+          </div>
+          <div className="imageAndNameParentRight">
+              <img className="personImage rightPersonImage" src="http://via.placeholder.com/73x73"/>
+              <p className="name rightName">Vickie Reed</p>
+          </div>
+          <div className="imageAndNameParentRight">
+              <img className="personImage rightPersonImage" src="http://via.placeholder.com/73x73"/>
+              <p className="name rightName">Vickie Reed</p>
+          </div>
         </div>
       </center>
     );

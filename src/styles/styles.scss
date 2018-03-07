@@ -165,6 +165,10 @@ input.small { width: 46px; }
   width: 67.6vw;
 }
 
+.imageAndNameParentRight {
+  width: 8.1vw;
+}
+
 .chatLeftLogout {
   background: #FFFFFF;
   border: 1px solid #0071BC;
@@ -218,4 +222,23 @@ input.small { width: 46px; }
   display: block;
   width: 5%;
   height: auto;
+}
+
+.rightPersonImage {
+
+}
+
+.rightName {
+
+}
+
+#friendsRight {
+  font-family: "Source Sans Pro";
+  font-weight: bold;
+  font-size: 1.85vh;
+  letter-spacing: 0.102vw;
+  text-transform: uppercase;
+  color: #0071BC;
+  text-align: left;
+  padding-left: 1.5vw;
 }
