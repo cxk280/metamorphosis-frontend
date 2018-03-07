@@ -31,8 +31,6 @@ input.small { width: 46px; }
 td.fuel-savings-label { width: 175px; }
 
 .credentialSection {
-  // border: 1px solid black;
-  // border-radius: 40px;
   background: #F6F6FC;
   border: 1px solid #0071BC;
   width: 400px;
@@ -42,4 +40,56 @@ td.fuel-savings-label { width: 175px; }
   -webkit-border-radius: 46px;
   box-shadow: 3.06px 3.06px 3.06px rgba(0,0,0,0.35);
   filter: progid:DXImageTransform.Microsoft-.dropshadow(OffX=3.06, OffY=3.06, Color = "#000000");
+}
+
+.credentialInput {
+  background: #FFFFFF;
+  border: 0px solid #0071BC;
+  width: 190px;
+  height: 32px;
+  font-size: 20px;
+  font-family: "Source Sans Pro";
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 0.77px;
+  color: #CCCCCC;
+}
+
+.credentialLabel {
+  font-family: "Source Sans Pro";
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 19.1px;
+  letter-spacing: 0.83px;
+  color: #0071BC;
+  text-align: left;
+  display: inline-block;
+  width:70px;
+  text-align: right;
+  padding-right:10px;
+}
+
+.submitButton {
+  background: #FFFFFF;
+  border: 1px solid #0071BC;
+  width: 131px;
+  height: 35px;
+  border-radius: 17px;
+  -moz-border-radius: 17px;
+  -webkit-border-radius: 17px;
+  box-shadow: 2.65px 2.65px 2.65px rgba(0,0,0,0.35);
+  filter: progid:DXImageTransform.Microsoft-.dropshadow(OffX=2.65, OffY=2.65, Color = "#000000");
+  font-family: "Source Sans Pro";
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 0.72px;
+  color: #0071BC;
+}
+
+#signUpText {
+  font-family: "Source Sans Pro";
+  font-size: 14px;
+  line-height: 13.7px;
+  letter-spacing: 0.07px;
+  color: #0071BC;
 }

@@ -11,24 +11,21 @@ const Login = () => {
           <br />
           <h2>METAMORPHOSIS</h2>
           <br />
-          <form action="/login" method="post" name="loginForm">
+          <form action="/login" method="post" name="loginForm" className="form-horizontal">
             <div>
-              <label class="text-white">Email</label>
-              <br/>
-              <input type="text" placeholder="Email" name="email"/>
+              <label class="credentialLabel emailLabel">Email</label>
+              <input className="credentialInput" type="text" placeholder="Email" name="email"/>
             </div>
             <br /><br />
             <div>
-              <label class="text-white">Password</label>
-              <br/>
-              <input type="password" placeholder="Password" name="password"/>
+              <label class="credentialLabel passwordLabel">Password</label>
+              <input className="credentialInput" type="password" placeholder="Password" name="password"/>
             </div>
             <br /><br />
-            <input type="submit"/>
+            <input className="submitButton" type="submit"/>
             <br /><br />
           </form>
-          <br />
-          <p>Don't have an account? Sign up <a href="/signup">here</a>!</p>
+          <p id="signupText">Don't have an account? Sign up <a href="/signup">here</a>!</p>
         </div>
       </center>
     </div>

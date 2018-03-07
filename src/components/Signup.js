@@ -11,20 +11,18 @@ const Signup = () => {
           <br />
           <h2>METAMORPHOSIS</h2>
           <br />
-          <form action="/login" method="post" name="loginForm">
+          <form action="/signup" method="post" name="signupForm">
             <div>
-              <label className="text-white">Email</label>
-              <br/>
-              <input type="text" placeholder="Email" name="email"/>
+              <label className="credentialLabel emailLabel">Email</label>
+              <input className="credentialInput" type="text" placeholder="Email" name="email"/>
             </div>
             <br /><br />
             <div>
-              <label className="text-white">Password</label>
-              <br/>
-              <input type="password" placeholder="Password" name="password"/>
+              <label className="credentialLabel passwordLabel">Password</label>
+              <input className="credentialInput" type="password" placeholder="Password" name="password"/>
             </div>
             <br /><br />
-            <input type="submit"/>
+            <input className="submitButton" type="submit"/>
             <br /><br />
           </form>
         </div>
