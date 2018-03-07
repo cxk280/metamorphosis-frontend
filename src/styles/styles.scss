@@ -113,7 +113,10 @@ input.small { width: 46px; }
   width: 67.6vw;
   // height: calc(100vh - 116px - 52px);
   height: 100vh - 15.1vh - 17.3vh;
-  margin-top: -19px;
+  // margin-top: -19px;
+  margin-top: -88.9vh;
+  margin-left: 16.2vw;
+  position: absolute;
 }
 
 .chatTop {
@@ -125,14 +128,20 @@ input.small { width: 46px; }
   margin-top: -100vh;
   // margin-left: calc(calc(100vw - 881px)/2);
   margin-left: 16.2vw;
+  position: absolute;
 }
 
 .chatBottom {
   background: #EFEFEF;
   // width: 881px;
-  width: 67.6vw;
+  // width: 67.6vw;
+  width: 67.3vw;
+  padding-right: 0.3vw;
   // height: 52px;
-  height: 17.3vw;
+  height: 18.5vh;
+  margin-top: -21.3vh;
+  margin-left: 16.2vw;
+  position: absolute;
 }
 
 .chatLeft {
@@ -156,6 +165,8 @@ input.small { width: 46px; }
   margin-top: -100vh;
   box-shadow: -4px 4px 4px rgba(0,0,0,0.35);
   filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=-4,OffY=4,Color="#000000");
+  vertical-align: top;
+  display: inline-block;
 }
 
 .imageParentChatLeft {
@@ -169,6 +180,7 @@ input.small { width: 46px; }
 
 .imageAndNameParentRight {
   width: 8.1vw;
+  margin-bottom: 4vh;
 }
 
 .chatLeftLogout {
@@ -200,13 +212,15 @@ input.small { width: 46px; }
   text-transform: uppercase;
   color: #0071BC;
   text-shadow: 1px 1px 0px rgba(255,255,255,1);
+  padding-left: 1vw;
 }
 
 .topName {
   position: absolute;
   // left: calc(calc(calc(100vw - 881px)/2) + 440.5px);
-  left: 16.2vw + 33.8vw;
-  top: 7.55vh;
+  // left: 16.2vw + 33.8vw;
+  left: 16.2vw + 16.9vw;
+  top: 4vh;
   font-family: "Source Sans Pro";
   // font-size: 18px;
   font-size: 2.34vh;
@@ -223,9 +237,8 @@ input.small { width: 46px; }
 .topPersonImage {
   position: absolute;
   // left: calc(calc(calc(100vw - 881px)/2) + 440.5px - 73px - 15px);
-  left: calc(16.2vw + 33.8vw - 73px - 15px);
-  // top: 52px;
-  top: 7.55vh;
+  left: calc(16.2vw + 16.9vw - 5% - 15px);
+  top: 3.38vh;
   display: block;
   width: 5%;
   height: auto;
@@ -252,4 +265,14 @@ input.small { width: 46px; }
   color: #0071BC;
   text-align: left;
   padding-left: 1.5vw;
+}
+
+.chatTextarea {
+  width: 100%;
+  height: 100%;
+  border: 0.5px solid gray;
+}
+
+.chatTextareaForm {
+  height: 100%;
 }

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 class ChatTop extends React.Component {
   render() {
     return (
+      <center>
         <div className="chatTop">
           <p id="chattingWith">Chatting with</p>
             <div className="imageAndNameParentTop">
@@ -11,6 +12,7 @@ class ChatTop extends React.Component {
                 <p className="name topName">Vickie Reed</p>
             </div>
         </div>
+      </center>
     );
   };
 };

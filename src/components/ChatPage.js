@@ -11,8 +11,8 @@ class ChatPage extends React.Component {
     return (
       <div className="chatPage">
           <ChatLeft />
-          <ChatRight />
           <ChatTop />
+          <ChatRight />
           <ChatMain />
           <ChatBottom />
       </div>
