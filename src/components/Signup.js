@@ -7,9 +7,9 @@ const Signup = () => {
       <center>
       <h1>Signup Page</h1>
         <div className="credentialSection">
-          <img src="http://via.placeholder.com/350x150"/>
-          <br />
-          <h2>METAMORPHOSIS</h2>
+          <div className="imageParent">
+            <img className="metamorphosisLogo" src="../images/Metamorphosis-Logo-Final.svg"/>
+          </div>
           <br />
           <form action="/signup" method="post" name="signupForm">
             <div>

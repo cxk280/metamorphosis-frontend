@@ -7,24 +7,24 @@ const Login = () => {
       <center>
       <h1>Login Page</h1>
         <div className="credentialSection">
-          <img src="http://via.placeholder.com/350x150"/>
-          <br />
-          <h2>METAMORPHOSIS</h2>
+          <div className="imageParent">
+            <img className="metamorphosisLogo" src="../images/Metamorphosis-Logo-Final.svg"/>
+          </div>
           <br />
           <form action="/login" method="post" name="loginForm" className="form-horizontal">
             <div>
               <label class="credentialLabel emailLabel">Email</label>
               <input className="credentialInput" type="text" placeholder="Email" name="email"/>
             </div>
-            <br /><br />
+            <br />
             <div>
               <label class="credentialLabel passwordLabel">Password</label>
               <input className="credentialInput" type="password" placeholder="Password" name="password"/>
             </div>
-            <br /><br />
+            <br />
             <input className="submitButton" type="submit"/>
-            <br /><br />
           </form>
+          <br />
           <p id="signupText">Don't have an account? Sign up <a href="/signup">here</a>!</p>
         </div>
       </center>
