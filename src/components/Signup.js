@@ -13,13 +13,13 @@ const Signup = () => {
           <br />
           <form action="/login" method="post" name="loginForm">
             <div>
-              <label class="text-white">Email</label>
+              <label className="text-white">Email</label>
               <br/>
               <input type="text" placeholder="Email" name="email"/>
             </div>
             <br /><br />
             <div>
-              <label class="text-white">Password</label>
+              <label className="text-white">Password</label>
               <br/>
               <input type="password" placeholder="Password" name="password"/>
             </div>

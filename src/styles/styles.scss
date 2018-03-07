@@ -31,6 +31,15 @@ input.small { width: 46px; }
 td.fuel-savings-label { width: 175px; }
 
 .credentialSection {
-  border: 1px solid black;
-
+  // border: 1px solid black;
+  // border-radius: 40px;
+  background: #F6F6FC;
+  border: 1px solid #0071BC;
+  width: 400px;
+  height: 450px;
+  border-radius: 46px;
+  -moz-border-radius: 46px;
+  -webkit-border-radius: 46px;
+  box-shadow: 3.06px 3.06px 3.06px rgba(0,0,0,0.35);
+  filter: progid:DXImageTransform.Microsoft-.dropshadow(OffX=3.06, OffY=3.06, Color = "#000000");
 }
