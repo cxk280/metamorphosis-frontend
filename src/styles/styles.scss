@@ -8,7 +8,7 @@ body {
   font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
   line-height: 1.4em;
   color: #4d4d4d;
-  min-width: 230px;
+  // min-width: 230px;
   // max-width: 550px;
   margin: 0 auto;
   -webkit-font-smoothing: antialiased;
@@ -28,7 +28,6 @@ h2 {
 .savings { color: $vin-green; }
 .loss { color: $vin-red; }
 input.small { width: 46px; }
-td.fuel-savings-label { width: 175px; }
 
 .credentialSection {
   background: #F6F6FC;
@@ -125,4 +124,15 @@ td.fuel-savings-label { width: 175px; }
   background: #EFEFEF;
   width: 881px;
   height: 52px;
+}
+
+.chatLeft {
+  // background: #FFFFFF;
+  background: pink;
+  // width: 50px;
+  width: calc(calc(100vw - 881px)/2);
+  margin-right: calc(100vw - calc(calc(100vw - 881px)/2));
+  height: 100vh;
+  box-shadow: 4px 4px 4px rgba(0,0,0,0.35);
+  filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=4, OffY=4, Color="#000000");
 }
