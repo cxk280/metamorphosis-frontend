@@ -6,7 +6,7 @@ class ChatRight extends React.Component {
     return (
       <center>
         <div className="chatRight">
-          <h3>ChatLeft</h3>
+          <h3>ChatRight</h3>
         </div>
       </center>
     );
