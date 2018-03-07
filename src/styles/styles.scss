@@ -147,13 +147,15 @@ input.small { width: 46px; }
 }
 
 .chatRight {
-  background: red;
+  background: #FFFFFF;
   // width: calc(calc(100vw - 881px)/2);
   width: 16.2vw;
   // margin-left: calc(100vw - calc(calc(100vw - 881px)/2));
   margin-left: 83.8vw;
   height: 100vh;
   margin-top: -100vh;
+  box-shadow: -4px 4px 4px rgba(0,0,0,0.35);
+  filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=-4,OffY=4,Color="#000000");
 }
 
 .imageParentChatLeft {
@@ -213,6 +215,11 @@ input.small { width: 46px; }
   text-shadow: 1px 1px 0px rgba(255,255,255,1);
 }
 
+.personImage {
+  border: 1px solid #0071BC;
+  border-radius: 50%;
+}
+
 .topPersonImage {
   position: absolute;
   // left: calc(calc(calc(100vw - 881px)/2) + 440.5px - 73px - 15px);
@@ -225,11 +232,15 @@ input.small { width: 46px; }
 }
 
 .rightPersonImage {
-
 }
 
 .rightName {
-
+  font-family: "Source Sans Pro";
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19.1px;
+  letter-spacing: 0.77px;
+  color: #0071BC;
 }
 
 #friendsRight {

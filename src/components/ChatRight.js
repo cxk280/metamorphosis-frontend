@@ -9,19 +9,19 @@ class ChatRight extends React.Component {
           <p id="friendsRight">Friends</p>
           <br />
           <div className="imageAndNameParentRight">
-              <img className="personImage rightPersonImage" src="http://via.placeholder.com/73x73"/>
+              <img className="personImage rightPersonImage" src="http://via.placeholder.com/49x49"/>
               <p className="name rightName">Vickie Reed</p>
           </div>
           <div className="imageAndNameParentRight">
-              <img className="personImage rightPersonImage" src="http://via.placeholder.com/73x73"/>
+              <img className="personImage rightPersonImage" src="http://via.placeholder.com/49x49"/>
               <p className="name rightName">Vickie Reed</p>
           </div>
           <div className="imageAndNameParentRight">
-              <img className="personImage rightPersonImage" src="http://via.placeholder.com/73x73"/>
+              <img className="personImage rightPersonImage" src="http://via.placeholder.com/49x49"/>
               <p className="name rightName">Vickie Reed</p>
           </div>
           <div className="imageAndNameParentRight">
-              <img className="personImage rightPersonImage" src="http://via.placeholder.com/73x73"/>
+              <img className="personImage rightPersonImage" src="http://via.placeholder.com/49x49"/>
               <p className="name rightName">Vickie Reed</p>
           </div>
         </div>
