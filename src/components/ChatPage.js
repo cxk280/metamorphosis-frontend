@@ -9,7 +9,7 @@ class ChatPage extends React.Component {
   render() {
     return (
       <div className="chatPage">
-          <ChatLeft />
+            <ChatLeft />
           <ChatTop />
           <ChatMain />
           <ChatBottom />
