@@ -7,7 +7,7 @@ class FriendItem extends React.Component {
         <p>Friend Item</p>
       </div>
     );
-  };
-};
+  }
+}
 
 export default FriendItem;
