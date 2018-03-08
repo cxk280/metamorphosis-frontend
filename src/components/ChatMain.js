@@ -1,16 +1,15 @@
 import React from 'react';
-import ChatItem from './ChatItem';
+import ChatItemLeft from './ChatItemLeft';
+import ChatItemRight from './ChatItemRight';
 
 class ChatMain extends React.Component {
   render() {
     return (
-      <center>
         <div className="chatMain">
-          <h1>Chat Main Page</h1>
+          <ChatItemLeft />
           <br />
-          <ChatItem />
+          <ChatItemRight />
         </div>
-      </center>
     );
   }
 }
