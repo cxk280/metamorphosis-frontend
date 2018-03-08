@@ -6,10 +6,12 @@ class ChatItemRight extends React.Component {
       <div>
           <div className="imageParentMain">
               <img className="personImage mainPersonImageRight" src="http://via.placeholder.com/49x49"/>
-              <p className="name rightName">Vickie Reed</p>
           </div>
-          <div className="chatMessage">
-            <p>Chat Item</p>
+          <div className="chatMessageRight">
+            <p className="chatTextRight">Chat message</p>
+          </div>
+          <div className="chatTimeRight">
+            <p>Chat time</p>
           </div>
       </div>
     );

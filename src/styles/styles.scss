@@ -8,8 +8,6 @@ body {
   font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
   line-height: 1.4em;
   color: #4d4d4d;
-  // min-width: 230px;
-  // max-width: 550px;
   margin: 0 auto;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
@@ -109,11 +107,8 @@ input.small { width: 46px; }
 
 .chatMain {
   background-color: yellow;
-  // width: 881px;
   width: 67.6vw;
-  // height: calc(100vh - 116px - 52px);
   height: 100vh - 15.1vh - 17.3vh;
-  // margin-top: -19px;
   margin-top: -88.9vh;
   margin-left: 16.2vw;
   position: absolute;
@@ -121,23 +116,17 @@ input.small { width: 46px; }
 
 .chatTop {
   background: #EFEFEF;
-  // height: 116px;
   height: 15.1vh;
-  // width: 881px;
   width: 67.6vw;
   margin-top: -100vh;
-  // margin-left: calc(calc(100vw - 881px)/2);
   margin-left: 16.2vw;
   position: absolute;
 }
 
 .chatBottom {
   background: #EFEFEF;
-  // width: 881px;
-  // width: 67.6vw;
   width: 67.3vw;
   padding-right: 0.3vw;
-  // height: 52px;
   height: 18.5vh;
   margin-top: -21.3vh;
   margin-left: 16.2vw;
@@ -146,9 +135,7 @@ input.small { width: 46px; }
 
 .chatLeft {
   background: #FFFFFF;
-  // width: calc(calc(100vw - 881px)/2);
   width: 16.2vw;
-  // margin-right: calc(100vw - calc(calc(100vw - 881px)/2));
   margin-right: 83.8vw;
   height: 100vh;
   box-shadow: 4px 4px 4px rgba(0,0,0,0.35);
@@ -157,9 +144,7 @@ input.small { width: 46px; }
 
 .chatRight {
   background: #FFFFFF;
-  // width: calc(calc(100vw - 881px)/2);
   width: 16.2vw;
-  // margin-left: calc(100vw - calc(calc(100vw - 881px)/2));
   margin-left: 83.8vw;
   height: 100vh;
   margin-top: -100vh;
@@ -170,7 +155,6 @@ input.small { width: 46px; }
 }
 
 .imageParentChatLeft {
-  // width: calc(calc(100vw - 881px)/2);
   width: 16.2vw;
 }
 
@@ -190,9 +174,7 @@ input.small { width: 46px; }
 .chatLeftLogout {
   background: #FFFFFF;
   border: 1px solid #0071BC;
-  // width: calc(calc(calc(100vw - 881px)/2)/2);
   width: 8.1vw;
-  // height: 30px;
   height: 3.9vh;
   border-radius: 15px;
   -moz-border-radius: 15px;
@@ -221,12 +203,9 @@ input.small { width: 46px; }
 
 .topName {
   position: absolute;
-  // left: calc(calc(calc(100vw - 881px)/2) + 440.5px);
-  // left: 16.2vw + 33.8vw;
   left: 16.2vw + 16.9vw;
   top: 4vh;
   font-family: "Source Sans Pro";
-  // font-size: 18px;
   font-size: 2.34vh;
   letter-spacing: 0.72px;
   color: #0071BC;
@@ -238,19 +217,8 @@ input.small { width: 46px; }
   border-radius: 50%;
 }
 
-.mainPersonImageLeft {
-  margin-top: 3vh;
-  margin-left: 5vw;
-}
-
-.mainPersonImageRight {
-  margin-top: 3vh;
-  margin-left: 5vw;
-}
-
 .topPersonImage {
   position: absolute;
-  // left: calc(calc(calc(100vw - 881px)/2) + 440.5px - 73px - 15px);
   left: calc(16.2vw + 16.9vw - 5% - 15px);
   top: 3.38vh;
   display: block;
@@ -291,6 +259,74 @@ input.small { width: 46px; }
   height: 100%;
 }
 
-.chatMessage {
+.chatMessageLeft {
+  position: absolute;
+  background: #40B3DB;
+  border: 1px solid #0071BC;
+  width: 49.95vw;
+  height: 10vh;
+  border-radius: 21px;
+  -moz-border-radius: 21px;
+  -webkit-border-radius: 21px;
+  box-shadow: 2.91px 2.91px 2.91px rgba(0,0,0,0.35);
+  filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2.91, OffY=2.91, Color="#000000");
+  margin-left: 7.825vw;
+  margin-top: 6vh;
+}
+
+.chatMessageRight {
+  position: absolute;
+  background: #40B3DB;
+  border: 1px solid #0071BC;
+  width: 49.95vw;
+  height: 10vh;
+  border-radius: 21px;
+  -moz-border-radius: 21px;
+  -webkit-border-radius: 21px;
+  box-shadow: 2.91px 2.91px 2.91px rgba(0,0,0,0.35);
+  filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2.91, OffY=2.91, Color="#000000");
+  margin-left: 9.825vw;
+  margin-top: 12vh;
+}
+
+.mainPersonImageLeft {
+  position: absolute;
+  margin-top: 3vh;
+  margin-left: 5vw;
+}
+
+.mainPersonImageRight {
+  position: absolute;
+  margin-top: 3vh;
+  margin-left: 5vw;
+}
+
+.chatTextLeft {
+  font-family: "Source Sans Pro";
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 20.1px;
+  letter-spacing: 0.53px;
+  color: #FFFFFF;
+  margin-left: 2vw;
+  margin-top: 0.5vh;
+}
+
+.chatTextRight {
+  font-family: "Source Sans Pro";
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 20.1px;
+  letter-spacing: 0.53px;
+  color: #FFFFFF;
+  margin-left: 2vw;
+  margin-top: 0.5vh;
+}
+
+.chatTimeLeft {
+
+}
+
+.chatTimeRight {
 
 }
