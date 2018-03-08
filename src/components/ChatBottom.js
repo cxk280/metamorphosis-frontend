@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 class ChatBottom extends React.Component {
   render() {
@@ -12,7 +11,7 @@ class ChatBottom extends React.Component {
         </div>
       </center>
     );
-  };
-};
+  }
+}
 
 export default ChatBottom;

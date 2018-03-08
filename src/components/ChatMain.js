@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import ChatItem from './ChatItem';
 
 class ChatMain extends React.Component {
@@ -13,7 +12,7 @@ class ChatMain extends React.Component {
         </div>
       </center>
     );
-  };
-};
+  }
+}
 
 export default ChatMain;

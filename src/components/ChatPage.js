@@ -1,5 +1,4 @@
 import React      from 'react';
-import { Link }   from 'react-router-dom';
 import ChatMain   from './ChatMain';
 import ChatTop    from './ChatTop';
 import ChatBottom from './ChatBottom';
@@ -17,7 +16,7 @@ class ChatPage extends React.Component {
           <ChatBottom />
       </div>
     );
-  };
-};
+  }
+}
 
 export default ChatPage;
