@@ -6,9 +6,11 @@ class ChatMain extends React.Component {
   render() {
     return (
         <div className="chatMain">
-          <ChatItemLeft />
-          <br />
-          <ChatItemRight />
+          <div className="chatMessages">
+            <ChatItemLeft />
+            <br />
+            <ChatItemRight />
+          </div>
         </div>
     );
   }

@@ -259,8 +259,12 @@ input.small { width: 46px; }
   height: 100%;
 }
 
+.chatMessages {
+  margin-top: 10vh;
+}
+
 .chatMessageLeft {
-  position: absolute;
+  position: relative;
   background: #40B3DB;
   border: 1px solid #0071BC;
   width: 49.95vw;
@@ -271,11 +275,10 @@ input.small { width: 46px; }
   box-shadow: 2.91px 2.91px 2.91px rgba(0,0,0,0.35);
   filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2.91, OffY=2.91, Color="#000000");
   margin-left: 7.825vw;
-  margin-top: 6vh;
 }
 
 .chatMessageRight {
-  position: absolute;
+  position: relative;
   background: #40B3DB;
   border: 1px solid #0071BC;
   width: 49.95vw;
@@ -286,19 +289,20 @@ input.small { width: 46px; }
   box-shadow: 2.91px 2.91px 2.91px rgba(0,0,0,0.35);
   filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2.91, OffY=2.91, Color="#000000");
   margin-left: 9.825vw;
-  margin-top: 12vh;
 }
 
-.mainPersonImageLeft {
-  position: absolute;
-  margin-top: 3vh;
-  margin-left: 5vw;
+.chatImageLeft {
+  position: fixed;
+  margin-top: -6vh;
+  margin-left: 6vw;
+  z-index: 100;
 }
 
-.mainPersonImageRight {
-  position: absolute;
-  margin-top: 3vh;
-  margin-left: 5vw;
+.chatImageRight {
+  position: fixed;
+  margin-top: -6vh;
+  margin-left: 8vw;
+  z-index: 100;
 }
 
 .chatTextLeft {
@@ -308,7 +312,7 @@ input.small { width: 46px; }
   line-height: 20.1px;
   letter-spacing: 0.53px;
   color: #FFFFFF;
-  margin-left: 2vw;
+  margin-left: 3vw;
   margin-top: 0.5vh;
 }
 
@@ -319,14 +323,26 @@ input.small { width: 46px; }
   line-height: 20.1px;
   letter-spacing: 0.53px;
   color: #FFFFFF;
-  margin-left: 2vw;
+  margin-left: 3vw;
   margin-top: 0.5vh;
 }
 
 .chatTimeLeft {
-
+  font-family: "Source Sans Pro";
+  font-weight: bold;
+  font-size: 12px;
+  letter-spacing: 0.66px;
+  color: #0071BC;
+  margin-top: -2vh;
+  margin-left: 10.825vw;
 }
 
 .chatTimeRight {
-
+  font-family: "Source Sans Pro";
+  font-weight: bold;
+  font-size: 12px;
+  letter-spacing: 0.66px;
+  color: #0071BC;
+  margin-left: 12.825vw;
+  margin-top: -2vh;
 }

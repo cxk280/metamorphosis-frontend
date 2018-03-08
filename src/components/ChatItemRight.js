@@ -5,7 +5,7 @@ class ChatItemRight extends React.Component {
     return (
       <div>
           <div className="imageParentMain">
-              <img className="personImage mainPersonImageRight" src="http://via.placeholder.com/49x49"/>
+              <img className="personImage chatImageRight" src="http://via.placeholder.com/49x49"/>
           </div>
           <div className="chatMessageRight">
             <p className="chatTextRight">Chat message</p>
