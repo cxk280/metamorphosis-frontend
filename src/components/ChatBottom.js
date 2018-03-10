@@ -2,14 +2,26 @@ import React from 'react';
 
 class ChatBottom extends React.Component {
 
-  handleSubmit(data) {
-      console.log('form submission data', data);
+  constructor(props) {
+    super(props);
+
+    this.state = {
+        data : '',
+        inputValue : ''
+    };
+
+    this.handleKeyPress = this.handleKeyPress.bind(this);
+  }
+
+  componentDidUpdate(){
+    console.log('this.state.data: ',this.state.data);
   }
 
   handleKeyPress(e) {
-    e.preventDefault();
-    if(e.keyCode == 13){
-      console.log('enter pressed!');
+    if(e.key == "Enter"){
+      if(e.preventDefault) e.preventDefault();
+      this.setState({data: e.target.value})
+      e.target.value = '';
     };
   }
 
