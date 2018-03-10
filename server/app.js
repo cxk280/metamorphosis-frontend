@@ -60,19 +60,20 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-app.get('/test', function(req, res) {
-  res.send('test');
-});
+// app.post('/signup', function(req, res) {
+//   console.log("req.body: ",req.body);
+//   res.send('signup sent');
+// });
 
-app.post('http://localhost:9000/signup', thisPassport.authenticate('local-signup', {
-        successRedirect : '/chat',
-        failureRedirect : '/',
+app.post('/signup', thisPassport.authenticate('local-signup', {
+        successRedirect : 'http://localhost:3000/chat',
+        failureRedirect : 'http://localhost:3000/',
         failureFlash : true
   }));
 
-app.post('http://localhost:9000/login', thisPassport.authenticate('local-login', {
-        successRedirect : '/chat',
-        failureRedirect : '/',
+app.post('/login', thisPassport.authenticate('local-login', {
+        successRedirect : 'http://localhost:3000/chat',
+        failureRedirect : 'http://localhost:3000/',
         failureFlash : true
     }));
 

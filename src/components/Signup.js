@@ -10,10 +10,10 @@ const Signup = () => {
             <img className="metamorphosisLogo" src="../images/Metamorphosis-Logo-Final.svg"/>
           </div>
           <br />
-          <form action="/signup" method="post" name="signupForm">
+          <form action="http://localhost:9000/signup" method="post" name="signupForm">
             <div>
-              <label className="credentialLabel emailLabel">Email</label>
-              <input className="credentialInput" type="text" placeholder="Email" name="email"/>
+              <label className="credentialLabel usernameLabel">Username</label>
+              <input className="credentialInput" type="text" placeholder="Username" name="username"/>
             </div>
             <br /><br />
             <div>

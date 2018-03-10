@@ -13,8 +13,8 @@ class Login extends React.Component {
             <br />
             <form action="http://localhost:9000/login" method="post" name="loginForm" className="form-horizontal">
               <div>
-                <label className="credentialLabel emailLabel">Email</label>
-                <input className="credentialInput" type="text" placeholder="Email" name="email"/>
+                <label className="credentialLabel usernameLabel">Username</label>
+                <input className="credentialInput" type="text" placeholder="Username" name="username"/>
               </div>
               <br />
               <div>
