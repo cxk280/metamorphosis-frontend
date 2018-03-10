@@ -65,6 +65,7 @@ app.use(cookieParser());
 //   res.send('signup sent');
 // });
 
+//Why does the below always fail?
 app.post('/signup', thisPassport.authenticate('local-signup', {
         successRedirect : 'http://localhost:3000/chat',
         failureRedirect : 'http://localhost:3000/',
