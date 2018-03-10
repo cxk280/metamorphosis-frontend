@@ -42,6 +42,7 @@ app.use(session({ secret: process.env.SESSION_SECRET,
   resave: true,
   saveUninitialized: true
 }));
+
 app.use(thisPassport.initialize());
 app.use(thisPassport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
@@ -63,13 +64,13 @@ app.get('/test', function(req, res) {
   res.send('test');
 });
 
-app.post('/signup', thisPassport.authenticate('local-signup', {
+app.post('http://localhost:9000/signup', thisPassport.authenticate('local-signup', {
         successRedirect : '/chat',
         failureRedirect : '/',
         failureFlash : true
   }));
 
-app.post('/login', thisPassport.authenticate('local-login', {
+app.post('http://localhost:9000/login', thisPassport.authenticate('local-login', {
         successRedirect : '/chat',
         failureRedirect : '/',
         failureFlash : true

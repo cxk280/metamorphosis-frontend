@@ -11,7 +11,7 @@ class Login extends React.Component {
               <img className="metamorphosisLogo" src="../images/Metamorphosis-Logo-Final.svg"/>
             </div>
             <br />
-            <form action="/login" method="post" name="loginForm" className="form-horizontal">
+            <form action="http://localhost:9000/login" method="post" name="loginForm" className="form-horizontal">
               <div>
                 <label className="credentialLabel emailLabel">Email</label>
                 <input className="credentialInput" type="text" placeholder="Email" name="email"/>
