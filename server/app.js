@@ -3,6 +3,7 @@ const morgan                      = require('morgan');
 const path                        = require('path');
 const bodyParser                  = require('body-parser');
 const cookieParser                = require('cookie-parser');
+const flash                       = require('connect-flash');
 const dotenv                      = require('dotenv').config();
 const Passport                    = require('passport').Passport;
 const thisPassport                = new Passport();
@@ -58,14 +59,18 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
+app.get('/test', function(req, res) {
+  res.send('test');
+});
+
 app.post('/signup', thisPassport.authenticate('local-signup', {
-        successRedirect : '/',
+        successRedirect : '/chat',
         failureRedirect : '/',
         failureFlash : true
   }));
 
 app.post('/login', thisPassport.authenticate('local-login', {
-        successRedirect : '/instructions',
+        successRedirect : '/chat',
         failureRedirect : '/',
         failureFlash : true
     }));
