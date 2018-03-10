@@ -15,11 +15,6 @@ class ChatBottom extends React.Component {
 
   componentDidUpdate(){
     console.log('this.state.data before fetch: ',this.state.data);
-    // fetch("http://localhost:8082/topics")
-    // .then(response => {
-    //     console.log('response: ',response);
-    //     console.log('response.json(): ',response.json());
-    // })
     fetch("http://localhost:8082/topics/jsontest", {
       body: "{\"records\":[{\"value\":{\"name\": \"testUser\"}}]}",
       headers: {
@@ -38,7 +33,7 @@ class ChatBottom extends React.Component {
       if(e.preventDefault) e.preventDefault();
       this.setState({data: {message: e.target.value}})
       e.target.value = '';
-    };
+    }
   }
 
   render() {
