@@ -1,25 +1,6 @@
 import React from 'react';
 
 class Login extends React.Component {
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-        email : '',
-        password: ''
-    };
-
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleKeyPress(e) {
-      if(e.preventDefault) e.preventDefault();
-      this.setState({data: {message: e.target.value}})
-      e.target.value = '';
-  }
-
-
   render() {
     return (
       <div>
@@ -30,7 +11,7 @@ class Login extends React.Component {
               <img className="metamorphosisLogo" src="../images/Metamorphosis-Logo-Final.svg"/>
             </div>
             <br />
-            <form name="loginForm" className="form-horizontal" onSubmit={this.handleSubmit}>
+            <form action="/login" method="post" name="loginForm" className="form-horizontal">
               <div>
                 <label className="credentialLabel emailLabel">Email</label>
                 <input className="credentialInput" type="text" placeholder="Email" name="email"/>
@@ -44,7 +25,7 @@ class Login extends React.Component {
               <input className="submitButton" type="submit"/>
             </form>
             <br />
-            <p id="signupText">Don&apos;t have an account? Sign up <a href="/signup">here</a>!</p>
+            <p id="signupText">Don&apos;t have an account? Sign up <a href="/signupPage">here</a>!</p>
           </div>
         </center>
       </div>
