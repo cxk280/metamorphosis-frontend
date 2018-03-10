@@ -15,8 +15,19 @@ class ChatBottom extends React.Component {
 
   componentDidUpdate(){
     console.log('this.state.data before fetch: ',this.state.data);
-    fetch("http://localhost:8082/topics")
-    .then(response => {
+    // fetch("http://localhost:8082/topics")
+    // .then(response => {
+    //     console.log('response: ',response);
+    //     console.log('response.json(): ',response.json());
+    // })
+    fetch("http://localhost:8082/topics/jsontest", {
+      body: "{\"records\":[{\"value\":{\"name\": \"testUser\"}}]}",
+      headers: {
+        "Content-Type": "application/vnd.kafka.json.v2+json"
+      },
+      method: "POST"
+    })
+      .then(response => {
         console.log('response: ',response);
         console.log('response.json(): ',response.json());
     })
