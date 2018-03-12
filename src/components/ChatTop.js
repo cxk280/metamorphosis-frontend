@@ -7,8 +7,8 @@ class ChatTop extends React.Component {
         <div className="chatTop">
           <p id="chattingWith">Chatting with</p>
             <div className="imageAndNameParentTop">
-                <img className="personImage topPersonImage" src="http://via.placeholder.com/73x73"/>
-                <p className="name topName">Vickie Reed</p>
+                <img className="personImage topPersonImage" src="../images/chris_profile_cropped.jpg"/>
+                <p className="name topName">Christopher King</p>
             </div>
         </div>
       </center>

@@ -229,6 +229,9 @@ input.small { width: 46px; }
 }
 
 .rightPersonImage {
+  display: block;
+  width: 60%;
+  height: auto;
 }
 
 .rightName {
@@ -299,6 +302,8 @@ input.small { width: 46px; }
   margin-top: -6vh;
   margin-left: 6vw;
   z-index: 100;
+  width: 5%;
+  height: auto;
 }
 
 .chatImageRight {
@@ -306,6 +311,8 @@ input.small { width: 46px; }
   margin-top: -6vh;
   margin-left: 8vw;
   z-index: 100;
+  width: 5%;
+  height: auto;
 }
 
 .chatTextLeft {
