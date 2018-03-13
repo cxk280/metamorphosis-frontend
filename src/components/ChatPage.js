@@ -11,7 +11,8 @@ class ChatPage extends React.Component {
 
     this.state = {
         user: 'Chris',
-        message: ''
+        message: [],
+        messageNumber: [0]
     };
 
     this.handleKeyPress = this.handleKeyPress.bind(this);
@@ -59,7 +60,12 @@ class ChatPage extends React.Component {
         .then(response => response.json())
           .then(data => {
             if((this.state.user != data[0].value.user) || (this.state.message != data[0].value.message)) {
-              this.setState({ user: data[0].value.user, message: data[0].value.message});
+              this.state.messageNumber.push(this.state.messageNumber[this.state.messageNumber.length - 1] + 1);
+              console.log('this.state.messageNumber.length: ',this.state.messageNumber.length);
+              this.state.message.push(data[0].value.message);
+              console.log('this.state.message after push: ',this.state.messsage);
+
+              this.setState({ user: data[0].value.user, message: this.state.message, messageNumber: this.state.messageNumber});
             } else {
               return
             }
@@ -77,7 +83,7 @@ class ChatPage extends React.Component {
           <ChatLeft />
           <ChatTop />
           <ChatRight />
-          <ChatMain message={this.state.message}/>
+          <ChatMain message={this.state.message} messageNumber={this.state.messageNumber}/>
           <center>
             <div className="chatBottom">
               <form name="chatMessageForm" className="chatTextareaForm" onKeyDown={this.handleKeyPress}>

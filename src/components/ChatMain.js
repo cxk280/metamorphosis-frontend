@@ -2,6 +2,19 @@ import React from 'react';
 import ChatItemLeft from './ChatItemLeft';
 import ChatItemRight from './ChatItemRight';
 
+// {this.props.messageNumber.map(function(result) {
+//               if (this.props.messageNumber.length == 0) {
+//                 return
+//               }
+//               else if (this.props.messageNumber.length % 2 != 0) {
+//                 return <ChatItemLeft key={result.id} message={this.props.message} time={this.state.time}/>;
+//               }
+//               else if (this.props.messageNumber % 2 == 0) {
+//                 return <ChatItemRight key={result.id} message={this.props.message} time={this.state.time}/>;
+//               }
+//               <br />
+//             })}
+
 class ChatMain extends React.Component {
 
   constructor(props) {
@@ -36,22 +49,39 @@ class ChatMain extends React.Component {
     console.log('formattedTime: ',formattedTime);
     this.state.time = formattedTime;
     console.log('this.state.time after setting state in right: ',this.state.time);
+
+
+    console.log('this.props.messageNumber in componentWillMount: ',this.props.messageNumber);
+  }
+
+  componentDidUpdate() {
+    console.log('this.props.messageNumber in componentDidUpdate: ',this.props.messageNumber);
   }
 
 
 
 
   render() {
+
+    let myMessage = this.props.message;
+    console.log('myMessage: ',myMessage);
+    let myTime = this.state.time;
+    console.log('mytime: ',myTime);
+    let myMessageNumber = this.props.messageNumber;
+    console.log('myMessageNumber: ',myMessageNumber);
+
     return (
         <div className="chatMain">
           <div className="chatMessages">
-            <ChatItemLeft message={this.props.message} time={this.state.time}/>
-            <br />
-            <ChatItemRight time={this.state.time} />
+              {this.props.messageNumber.map(function(result) {
+                    return <ChatItemLeft key={result} message={myMessage[result]} time={myTime} messageNumber={myMessageNumber}/>
+              })}
           </div>
         </div>
     );
   }
 }
+
+
 
 export default ChatMain;
