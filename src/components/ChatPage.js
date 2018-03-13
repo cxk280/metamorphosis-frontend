@@ -58,18 +58,9 @@ class ChatPage extends React.Component {
         })
         .then(response => response.json())
           .then(data => {
-            console.log('last then');
-            console.log('data: ',data);
-            console.log('this.state.user: ',this.state.user);
-            console.log('data[0].value.user: ',data[0].value.user);
-            // console.log(this.state.message);
-            // console.log(data[0].value.message);
             if((this.state.user != data[0].value.user) || (this.state.message != data[0].value.message)) {
               this.setState({ user: data[0].value.user, message: data[0].value.message});
-              console.log('this.state.user after setState: ',this.state.user);
-              console.log('this.state.message after setState: ',this.state.message);
             } else {
-              console.log('returning')
               return
             }
           })
