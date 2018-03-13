@@ -43,6 +43,8 @@ class ChatPage extends React.Component {
     if(e.key == "Enter"){
       if(e.preventDefault) e.preventDefault();
 
+      console.log('this.state.message before fetch: ',this.state.message);
+
       fetch("http://localhost:8082/topics/jsontest", {
         body: "{\"records\":[{\"value\":{\"user\": \"" + this.state.user + "\", \"message\": \"" + e.target.value + "\"}}]}",
         headers: {
@@ -52,6 +54,7 @@ class ChatPage extends React.Component {
       })
       .then(response => {
         console.log('first then');
+        console.log('this.state.message at beginning of first then: ',this.state.message);
         fetch("http://localhost:8082/consumers/my_json_consumer/instances/my_consumer_instance/records", {
           headers: {
             Accept: "application/vnd.kafka.json.v2+json"
@@ -59,13 +62,20 @@ class ChatPage extends React.Component {
         })
         .then(response => response.json())
           .then(data => {
-            if((this.state.user != data[0].value.user) || (this.state.message != data[0].value.message)) {
+            let messageVar = this.state.message;
+            // console.log('this.state.message at beginning of final then: ',this.state.message);
+            console.log('messageVar at beginning of final then: ',messageVar);
+            if (messageVar[messageVar.length - 1] != data[0].value.message) {
+              console.log('messageVar at beginning of if in final then: ',messageVar);
               this.state.messageNumber.push(this.state.messageNumber[this.state.messageNumber.length - 1] + 1);
               console.log('this.state.messageNumber.length: ',this.state.messageNumber.length);
-              this.state.message.push(data[0].value.message);
-              console.log('this.state.message after push: ',this.state.messsage);
 
-              this.setState({ user: data[0].value.user, message: this.state.message, messageNumber: this.state.messageNumber});
+              console.log('messageVar before push: ',messageVar);
+              console.log('data[0].value.message before push: ',data[0].value.message);
+              messageVar.push(data[0].value.message);
+              console.log('messageVar after push: ',messageVar);
+
+              this.setState({ user: data[0].value.user, message: messageVar, messageNumber: this.state.messageNumber});
             } else {
               return
             }
