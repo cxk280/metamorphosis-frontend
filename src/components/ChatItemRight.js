@@ -43,7 +43,7 @@ class ChatItemRight extends React.Component {
               <img className="personImage chatImageRight" src="../images/chris_profile_cropped.jpg"/>
           </div>
           <div className="chatMessageRight">
-            <p className="chatTextRight">Chat message</p>
+            <p className="chatTextRight">{this.props.message}</p>
           </div>
           <div className="chatTimeRight">
             <p>{this.props.time}</p>

@@ -75,7 +75,12 @@ class ChatMain extends React.Component {
           <div className="chatMessages">
               {this.props.messageNumber.map(function(result) {
                 if (result != 0) {
-                  return <ChatItemLeft key={result} message={myMessage[result - 1]} time={myTime} messageNumber={myMessageNumber}/>
+                  if (result % 2 != 0) {
+                    return <ChatItemLeft key={result} message={myMessage[result - 1]} time={myTime} messageNumber={myMessageNumber}/>
+                  } else if (result % 2 == 0) {
+                    return <ChatItemRight key={result} message={myMessage[result - 1]} time={myTime} messageNumber={myMessageNumber}/>
+                  }
+
                 } else {
                   return
                 }
