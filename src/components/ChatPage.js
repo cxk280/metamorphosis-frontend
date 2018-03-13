@@ -1,7 +1,6 @@
 import React      from 'react';
 import ChatMain   from './ChatMain';
 import ChatTop    from './ChatTop';
-// import ChatBottom from './ChatBottom';
 import ChatLeft   from './ChatLeft';
 import ChatRight  from './ChatRight';
 
