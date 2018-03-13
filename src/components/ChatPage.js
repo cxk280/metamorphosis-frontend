@@ -27,25 +27,16 @@ class ChatPage extends React.Component {
       method: "POST"
     })
     .then(response => {
-      console.log('response: ',response);
-      console.log('response.json(): ',response.json());
+      fetch("http://localhost:8082/consumers/my_json_consumer/instances/my_consumer_instance/subscription", {
+        body: "{\"topics\":[\"jsontest\"]}",
+        headers: {
+          "Content-Type": "application/vnd.kafka.v2+json"
+        },
+        method: "POST"
+      }).then(response => {
+          //There is no response body to this one even when done correctly
+      })
     })
-    .then(
-      setTimeout(function () {
-        console.log('running setTimeout');
-        fetch("http://localhost:8082/consumers/my_json_consumer/instances/my_consumer_instance/subscription", {
-          body: "{\"topics\":[\"jsontest\"]}",
-          headers: {
-            "Content-Type": "application/vnd.kafka.v2+json"
-          },
-          method: "POST"
-        }).then(response => {
-            //There is no response body to this one even when done correctly
-            console.log('finished second fetch')
-            console.log('second response: ',response);
-          })
-      }, 5000)
-    )
   }
 
   componentDidUpdate(){
@@ -57,8 +48,19 @@ class ChatPage extends React.Component {
       method: "POST"
     })
     .then(response => {
-      console.log('response: ',response);
-      console.log('response.json(): ',response.json());
+      fetch("http://localhost:8082/consumers/my_json_consumer/instances/my_consumer_instance/records", {
+        headers: {
+          Accept: "application/vnd.kafka.json.v2+json"
+        }
+      })
+      .then(response => response.json())
+        .then(data => {
+          if((this.state.user != data[0].value.user) || (this.state.message != data[0].value.message)) {
+            this.setState({ user: data[0].value.user, message: data[0].value.message});
+          } else {
+            return
+          }
+        })
     })
   }
 
