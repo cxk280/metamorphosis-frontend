@@ -1,19 +1,9 @@
 import React from 'react';
+
 import ChatItemLeft from './ChatItemLeft';
 import ChatItemRight from './ChatItemRight';
 
-// {this.props.messageNumber.map(function(result) {
-//               if (this.props.messageNumber.length == 0) {
-//                 return
-//               }
-//               else if (this.props.messageNumber.length % 2 != 0) {
-//                 return <ChatItemLeft key={result.id} message={this.props.message} time={this.state.time}/>;
-//               }
-//               else if (this.props.messageNumber % 2 == 0) {
-//                 return <ChatItemRight key={result.id} message={this.props.message} time={this.state.time}/>;
-//               }
-//               <br />
-//             })}
+
 
 class ChatMain extends React.Component {
 
@@ -84,7 +74,6 @@ class ChatMain extends React.Component {
                 } else {
                   return
                 }
-
               })}
           </div>
         </div>
