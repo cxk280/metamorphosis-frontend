@@ -45,6 +45,7 @@ class ChatPage extends React.Component {
 
       console.log('this.state.message before fetch: ',this.state.message);
 
+      // The fetch below is not working
       fetch("http://localhost:8082/topics/jsontest", {
         body: "{\"records\":[{\"value\":{\"user\": \"" + this.state.user + "\", \"message\": \"" + e.target.value + "\"}}]}",
         headers: {
