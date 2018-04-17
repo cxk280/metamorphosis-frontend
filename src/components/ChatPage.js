@@ -45,7 +45,6 @@ class ChatPage extends React.Component {
 
       console.log('this.state.message before fetch: ',this.state.message);
 
-      // The fetch below is not working
       fetch("http://localhost:8082/topics/jsontest", {
         body: "{\"records\":[{\"value\":{\"user\": \"" + this.state.user + "\", \"message\": \"" + e.target.value + "\"}}]}",
         headers: {
@@ -64,18 +63,9 @@ class ChatPage extends React.Component {
         .then(response => response.json())
           .then(data => {
             let messageVar = this.state.message;
-            // console.log('this.state.message at beginning of final then: ',this.state.message);
-            console.log('messageVar at beginning of final then: ',messageVar);
             if (messageVar[messageVar.length - 1] != data[0].value.message) {
-              console.log('messageVar at beginning of if in final then: ',messageVar);
               this.state.messageNumber.push(this.state.messageNumber[this.state.messageNumber.length - 1] + 1);
-              console.log('this.state.messageNumber.length: ',this.state.messageNumber.length);
-
-              console.log('messageVar before push: ',messageVar);
-              console.log('data[0].value.message before push: ',data[0].value.message);
               messageVar.push(data[0].value.message);
-              console.log('messageVar after push: ',messageVar);
-
               this.setState({ user: data[0].value.user, message: messageVar, messageNumber: this.state.messageNumber});
             } else {
               return
