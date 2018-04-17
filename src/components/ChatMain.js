@@ -13,7 +13,7 @@ class ChatMain extends React.Component {
   }
 
   componentWillMount(){
-    console.log('this.state.time: ',this.state.time);
+  
     //Convert UNIX time to date
     let a = new Date(this.state.time*1000);
     let year = a.getFullYear();
@@ -33,9 +33,7 @@ class ChatMain extends React.Component {
     }
     let formattedTime = month + '-' + date + '-' + year;
 
-    console.log('formattedTime: ',formattedTime);
     this.state.time = formattedTime;
-    console.log('this.state.time after setting state in right: ',this.state.time);
   }
 
 
