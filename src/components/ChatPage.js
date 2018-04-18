@@ -19,6 +19,8 @@ class ChatPage extends React.Component {
   }
 
   componentWillMount() {
+
+    // Create a Kafka topic before the component mounts
     fetch("http://localhost:8082/consumers/my_json_consumer", {
       body: "{\"name\": \"my_consumer_instance\", \"format\": \"json\", \"auto.offset.reset\": \"earliest\"}",
       headers: {
@@ -34,17 +36,29 @@ class ChatPage extends React.Component {
         },
         method: "POST"
       }).then(response => {
-          //There is no response body to this one even when done correctly
+          // There is no response body to this one even when done correctly
       })
     })
+
+
+    // If the relevant ElasticSearch index does not exist, create it before component mounts
+    fetch("http://localhost:9200/kafkachat?pretty", {
+      method: "PUT"
+    })
+      .then(response => {
+        // console.log('ElasticSearc PUT response: ',response);
+      })
+
   }
 
+  // Send the submitted message to Kafka
   handleKeyPress(e) {
+
+    // Only do something if the user hits Enter
     if(e.key == "Enter"){
       if(e.preventDefault) e.preventDefault();
 
-      console.log('this.state.message before fetch: ',this.state.message);
-
+      // Post the submitted message to Kafka
       fetch("http://localhost:8082/topics/jsontest", {
         body: "{\"records\":[{\"value\":{\"user\": \"" + this.state.user + "\", \"message\": \"" + e.target.value + "\"}}]}",
         headers: {
@@ -52,26 +66,36 @@ class ChatPage extends React.Component {
         },
         method: "POST"
       })
-      .then(response => {
-        console.log('first then');
-        console.log('this.state.message at beginning of first then: ',this.state.message);
-        fetch("http://localhost:8082/consumers/my_json_consumer/instances/my_consumer_instance/records", {
-          headers: {
-            Accept: "application/vnd.kafka.json.v2+json"
-          }
-        })
-        .then(response => response.json())
-          .then(data => {
-            let messageVar = this.state.message;
-            if (messageVar[messageVar.length - 1] != data[0].value.message) {
-              this.state.messageNumber.push(this.state.messageNumber[this.state.messageNumber.length - 1] + 1);
-              messageVar.push(data[0].value.message);
-              this.setState({ user: data[0].value.user, message: messageVar, messageNumber: this.state.messageNumber});
-            } else {
-              return
+
+        // Get the submitted message from the Kafka consumer
+        .then(response => {
+          console.log('first then');
+          console.log('this.state.message at beginning of first then: ',this.state.message);
+          fetch("http://localhost:8082/consumers/my_json_consumer/instances/my_consumer_instance/records", {
+            headers: {
+              "Accept": "application/vnd.kafka.json.v2+json"
             }
           })
-      })
+
+            // Convert the response to JSON
+            .then(response => response.json())
+
+              // Modify state based on the response
+              .then(data => {
+                let messageVar = this.state.message;
+
+                // Change state if the submitted value and current state are different
+                if (messageVar[messageVar.length - 1] != data[0].value.message) {
+                  this.state.messageNumber.push(this.state.messageNumber[this.state.messageNumber.length - 1] + 1);
+                  messageVar.push(data[0].value.message);
+                  this.setState({ user: data[0].value.user, message: messageVar, messageNumber: this.state.messageNumber});
+                
+                // Do not change state if the submitted value and current state are not different
+                } else {
+                  return
+                }
+              })
+        })
       e.target.value = '';
     }
   }
