@@ -36,19 +36,23 @@ class ChatPage extends React.Component {
         },
         method: "POST"
       }).then(response => {
-          // There is no response body to this one even when done correctly
+
+          // GET and, if there is an error, PUT to create the relevant ElasticSearch index
+          fetch("http://localhost:9200/kafkachat?pretty", {
+            method: "GET"
+          })
+            .then(response => {
+              if (response.status != 200) {
+                fetch("http://localhost:9200/kafkachat?pretty", {
+                  method: "PUT"
+                })
+                  .then(response => {
+                    console.log('ElasticSearch componentWillMount PUT response: ',response);
+                  })   
+              }
+            })        
       })
     })
-
-
-    // If the relevant ElasticSearch index does not exist, create it before component mounts
-    fetch("http://localhost:9200/kafkachat?pretty", {
-      method: "PUT"
-    })
-      .then(response => {
-        // console.log('ElasticSearc PUT response: ',response);
-      })
-
   }
 
   // Send the submitted message to Kafka
@@ -85,17 +89,36 @@ class ChatPage extends React.Component {
                 let messageVar = this.state.message;
 
                 // Change state if the submitted value and current state are different
+                // Do not change state if the submitted value and current state are not different
                 if (messageVar[messageVar.length - 1] != data[0].value.message) {
                   this.state.messageNumber.push(this.state.messageNumber[this.state.messageNumber.length - 1] + 1);
                   messageVar.push(data[0].value.message);
                   this.setState({ user: data[0].value.user, message: messageVar, messageNumber: this.state.messageNumber});
                 
-                // Do not change state if the submitted value and current state are not different
-                } else {
-                  return
+                  // Put the submitted message to ElasticSearch
+                  // See https://www.elastic.co/guide/en/elasticsearch/reference/6.2/_index_and_query_a_document.html
+
+                  // WHy is PUT giving 400 error?
+                  fetch("http://localhost:9200/kafkachat?pretty", {
+                    // body: "{\"user\": \"" + data[0].value.user + "\", \"message\": \"" + data[0].value.message + "\"}",
+                    body: {"name": "Chris King"},
+                    headers: {
+                      "Content-Type": "application/json"
+                    },
+                    method: "PUT"
+                  })
+                    .then(response => {
+                      console.log('PUT message to ElasticSearch response: ',response);
+                    });
+
                 }
               })
-        })
+
+              
+
+                  
+        });
+
       e.target.value = '';
     }
   }
