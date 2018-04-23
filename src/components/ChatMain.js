@@ -17,6 +17,7 @@ class ChatMain extends React.Component {
 
   componentWillMount(){
     console.log('this.state.time: ',this.state.time);
+    
     //Convert UNIX time to date
     let a = new Date(this.state.time*1000);
     let year = a.getFullYear();
